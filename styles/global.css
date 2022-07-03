@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter var', sans-serif;
+  }
+}
+
+@font-face {
+  font-family: "AlphaLyrae";
+  src: url("../public/AlphaLyrae-Medium.woff");
+}
+
+
+.marquee { 
+  position: relative;
+  width: 50vw;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.marquee_inner { 
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 140s linear infinite;
+}
+
+.content { 
+  font-size: 45rem;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.blog-content > :first-child { 
+  padding: 0px;
+}
+
+.blog-content > * { 
+  padding-top: 30px;
+}
+
