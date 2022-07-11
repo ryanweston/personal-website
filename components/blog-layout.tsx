@@ -7,16 +7,18 @@ export default function BlogLayout({ children }) {
     <div className="w-screen bg-black py-10 px-10 text-white">
       <div className="flex flex-row justify-between">
         <Link href="/">
-          <a>
+          <a className="hover:bg-gray-800 hover:rounded-full py-2 px-2">
             <ArrowLeftIcon className="w-5 h-5"/>
           </a>
         </Link>
-        <h2 className='font-alpha text-lg'>Ryan Weston</h2> 
-        <MoonIcon className="w-5 h-5"/>
+        <h2 className='font-alpha text-lg'>Ryan Weston</h2>
+        <button className="hover:bg-gray-900 hover:rounded-full py-2 px-2">
+          <MoonIcon className="w-5 h-5"/>
+        </button>
       </div>
       <div className="w-full flex flex-col items-center">
        
-        <div className="w-2/5 mt-32">
+        <div className="lg:w-5/12 xl:w-6/12 mt-20 lg:mt-32">
           { children } 
         </div>
       </div>

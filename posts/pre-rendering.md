@@ -7,6 +7,14 @@ We recommend using **Static Generation** (with and without data) whenever possib
 
 You can use Static Generation for many types of pages, including:
 
+```js
+console.log(wow)
+
+function () {
+  wow
+}
+```
+
 - Marketing pages
 - Blog posts
 - E-commerce product listings

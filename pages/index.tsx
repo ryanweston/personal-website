@@ -14,15 +14,15 @@ import { useGLTF } from '@react-three/drei'
 
 export function Model({ ...props }) {
   const group = useRef()
+
+  // @ts-ignore
   const { nodes } = useGLTF('/models/doinky.glb')
 
   useFrame(() => { 
+    // @ts-ignore
     group.current.rotation.y += 0.002;
   })
 
-  useEffect(() => { 
-    console.log(nodes)
-  }, [])
   return (
     <group ref={group} {...props} dispose={null} position={[0,-7,0]}>
       <mesh geometry={nodes.doinkmmGroup0.geometry} >
@@ -34,7 +34,7 @@ export function Model({ ...props }) {
 
 useGLTF.preload('/models/doinky.glb')
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData }: any) {
 
   const [aspect, setAspect] = useState(null)
 
@@ -43,22 +43,22 @@ export default function Home({ allPostsData }) {
   }, [setAspect])
 
   return (
-    <div className="flex flex-row w-screen">
+    <div className="flex flex-col lg:flex-row w-screen">
       <Head>
         <title>Ryan Weston</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className='w-1/2 h-screen px-10 py-10 relative bg-black text-white overflow-hidden'>
-        <div className="flex flex-row font-alpha">
-          <a href="#">Twitter</a>
-          <a href="#" className="ml-8">GitHub</a>
-          <a href="#" className='ml-8'>YouTube</a>
+      <section className='w-full lg:w-1/2 h-screen px-10 py-10 relative bg-black text-white overflow-hidden'>
+      <div className="flex flex-row font-alpha z-50 relative">
+          <a href="#" className='hover:line-through'>Twitter</a>
+          <a href="#" className="ml-4 md:ml-8 hover:line-through">GitHub</a>
+          <a href="#" className='ml-4 md:ml-8 hover:line-through'>YouTube</a>
         </div>
-        <div className="absolute z-50 top-0 left-0 h-full flex flex-col justify-center align-center overflow-hidden">
+        <div className="absolute z-40 top-0 left-0 h-full flex flex-col justify-center align-center overflow-hidden">
           <div className="marquee">
               <div className='marquee_inner'>
-                <div className="content font-bold font-alpha text-white">
+                <div className="content font-bold font-alpha">
                   RYAN WESTON RYAN WESTON RYAN WESTON RYAN WESTON RYAN WESTON RYAN WESTON RYAN WESTON 
                 </div>
               </div>
@@ -75,20 +75,22 @@ export default function Home({ allPostsData }) {
         </div>
       </section>
 
-      <section className='w-1/2 text-black h-screen flex flex-col'>
-        <div className="px-20 py-20">
-          <h2 className='font-alpha text-5xl font-light'>I’m a designer & software engineer passionate about design systems & component libraries.</h2>
+      <section className='w-full lg:w-1/2 bg-black h-screen flex flex-col'>
+        <div className="px-10 py-14 bg-blueContrast lg:px-20 lg:py-20">
+          <h2 className='font-alpha text-4xl lg:text-5xl text-white font-light'>
+            I’m a designer & software engineer passionate about design systems. 
+          </h2>
         </div>
-        <div className='group px-20 py-20 bg-black grow overflow-y-scroll relative'>
+        <div className='group px-10 py-14 lg:px-20 lg:py-20 bg-black relative lg:overflow-y-scroll'>
           <h2 className='text-xl mb-6 text-white font-alpha'>Writing</h2>
-          {allPostsData.map(({ id, date, title }) => (
-            <div key={id} className="flex flex-col text-white">
+          {allPostsData.map(({ id, date, title }: { id: string, date: string, title: string}) => (
+            <div key={id} className="flex flex-col text-white border-t border-white py-6">
               <Link href={'/posts/' + id}>
-                <a key={id} className="text-5xl font-bold mt-8 mb-2">
+                <a key={id} className="text-5xl font-alpha disable-ligatures mb-2 hover:line-through">
                   {title}
                 </a>
               </Link>
-              <Date dateString={date}></Date>
+              {/* <Date dateString={date}></Date> */}
             </div>
           ))}
           

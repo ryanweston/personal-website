@@ -55,13 +55,8 @@ export async function getPostData(id) {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
 
-  // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-
-    console.log(processedContent.toString())
-  const contentHtml = processedContent.toString();
+  console.log(matterResult.content)
+  const contentHtml = matterResult.content;
 
   // Combine the data with the id and contentHtml
   return {
