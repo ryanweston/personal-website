@@ -85,7 +85,7 @@ export default function Home({ allPostsData }: any) {
   return (
     <div className="flex flex-col lg:flex-row w-screen">
       <Head>
-        <title>Ryan Weston | Portfolio</title>
+        <title>Ryan Weston</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -127,7 +127,7 @@ export default function Home({ allPostsData }: any) {
 
       <section className='w-full lg:w-5/12 2xl:max-w-3xl bg-[#131313] lg:h-screen px-10 lg:px-20 space-y-10 py-14 md:space-y-14 text-white flex flex-col lg:overflow-y-scroll'>
         <h2 className='font-alpha sm:leading-10 font-bold text-3xl disable-ligatures sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-6xl font-light'>
-          I'm a software engineer & designer who loves to build things. 
+          I&apos;m a software engineer & designer who loves to build things. 
         </h2>
         <div>
           { projects.map((item) => { 
