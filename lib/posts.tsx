@@ -1,8 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { remark } from 'remark';
-import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'posts')
 
@@ -29,6 +27,7 @@ export function getSortedPostsData() {
   })
   // Sort posts by date
   return allPostsData.sort((a, b) => {
+    // @ts-ignore
     if (a.date < b.date) {
       return 1
     } else {
@@ -48,7 +47,7 @@ export function getAllPostIds() {
   })
 }
 
-export async function getPostData(id) {
+export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
