@@ -55,19 +55,19 @@ export default function Home({ allPostsData }: any) {
   const projects = [ 
     {
       name: 'Unlocked',
-      description: 'Component library built with Tailwind & Vue3 with a focus on control inversion.',
+      description: 'Component library built with Tailwind & Vue3 with a focus on control inversion. My final year university project',
       link: '#',
       date: '2022'
     },
     {
       name: 'Predictable',
-      description: 'Predict the premier league table with friends. An experiment with React.',
+      description: 'Predict the premier league table and share/compare with friends. An experiment with React.',
       link: '#',
       date: '2022'
     },
     {
       name: 'EcoScan',
-      description: 'Scan household products for sustainability scores. An experiment with React Native.',
+      description: 'Scan household products for sustainability scores. University project with React Native.',
       link: '#',
       date: '2021'
     }
@@ -85,15 +85,15 @@ export default function Home({ allPostsData }: any) {
   return (
     <div className="flex flex-col lg:flex-row w-screen">
       <Head>
-        <title>Ryan Weston</title>
+        <title>Ryan Weston | Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <section className="bg-black text-white w-full lg:w-7/12 2xl:grow h-screen px-10 py-10 relative overflow-hidden">
         <div className='flex flex-row font-sans z-30 space-x-4 md:space-x-8'>
-          <a href="#" className='hover:line-through'>Twitter</a>
-          <a href="#" className="hover:line-through">GitHub</a>
-          <a href="#" className='hover:line-through'>YouTube</a>
+          <a href="https://twitter.com/rynwstn" className='hover:line-through'>Twitter</a>
+          <a href="https://github.com/ryanweston" className="hover:line-through">GitHub</a>
+          <a href="#" className='hover:line-through opacity-50'>YouTube</a>
         </div>
 
         <div className={clsx([isHover && hoverContent ? 'hidden' : 'block'])}>
