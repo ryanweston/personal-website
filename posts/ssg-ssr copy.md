@@ -1,5 +1,5 @@
 ---
-title: 'Two Forms of Pre-rendering'
+title: 'Why mobile browsers are a pain with Webkit & email templates'
 date: '2020-01-01'
 ---
 

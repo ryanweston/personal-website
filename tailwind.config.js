@@ -12,12 +12,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-        mono: ['Space Grotesk', ...defaultTheme.fontFamily.sans],
         alpha: ["AlphaLyrae", 'Inter var', ...defaultTheme.fontFamily.sans],
       },
-      colors: { 
-        blueContrast: '#0500FF'
-      }
     },
   },
   plugins: [],

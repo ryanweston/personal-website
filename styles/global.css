@@ -19,7 +19,6 @@
   font-variant-ligatures: none;
 }
 
-
 /* Home page  */
 
 .marquee { 
@@ -36,12 +35,19 @@
 
 @media (min-width: 1024px) { 
   .marquee {
-    width:50vw;
+    width:100%;
   }
   .content { 
     font-size: 45rem;
   }
  }
+
+ @media (min-width:1536px) { 
+  .content { 
+    font-size: 75rem;
+  }
+ }
+
 
 .marquee_inner { 
   height:100%;

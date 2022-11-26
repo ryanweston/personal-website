@@ -91,11 +91,11 @@ export default function Post({ postData }) {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <h1 className="text-black text-4xl lg:text-6xl font-alpha disable-ligatures font-bold" >{postData.title}</h1>
+      <h1 className="text-black text-4xl lg:text-5xl font-alpha disable-ligatures" >{postData.title}</h1>
       <div className="mt-4 text-gray-600">
         <Date dateString={postData.date} />
       </div>
-      <div className="text-black text-medium text-lg lg:text-xl mt-14 leading-relaxed blog-content">
+      <div className="text-black text-medium font-sans lg:text-lg mt-14 leading-relaxed blog-content">
         <BlogMarkdown markdown={postData.contentHtml}/>
       </div>
       <div className='mb-10 mt-16 pb-10 text-right'>

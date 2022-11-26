@@ -1,5 +1,5 @@
 ---
-title: 'When to Use Static Generation v.s. Server-side Rendering'
+title: 'The benefits of static site generation'
 date: '2020-01-02'
 ---
 
