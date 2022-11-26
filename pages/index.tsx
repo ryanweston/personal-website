@@ -135,15 +135,15 @@ export default function Home({ allPostsData }: any) {
             <div 
               key={item.name} 
               onMouseEnter={() => enterHoverState({ title: item.name })} onMouseLeave={(e) => leaveHoverState()} 
-              className="grid grid-cols-2 xl:grid-cols-4 space-y-3 xl:space-y-0 border-t border-white py-4 hover:cursor-pointer group"
+              className="grid grid-cols-2 xl:grid-cols-4 space-y-3 xl:space-y-0 border-t border-white py-6 hover:cursor-pointer group"
             >
-              <p className="font-sans text-sm font-sans disable-ligatures hover:line-through">
+              <p className="font-sans">
                 { item.name }
               </p>
-              <p className="font-sans col-span-2 text-sm xl:ml-auto  disable-ligatures">
+              <p className="font-sans col-span-2 xl:ml-auto">
                 { item.description }
               </p>
-              <p className="font-sans text-sm xl:ml-auto disable-ligatures">
+              <p className="font-sans xl:ml-auto">
                 { item.date }
               </p>
               {/* <ArrowRightIcon className="text-black w-5 h-5 ml-auto hidden group-hover:block" /> */}
