@@ -1,8 +1,9 @@
 import Link from "next/link"
 import { MoonIcon } from "@heroicons/react/outline"
 import { ArrowLeftIcon } from "@heroicons/react/solid"
+import React from "react";
 
-export default function BlogLayout({ children }) {
+const BlogLayout: React.FC<{ children: React.ReactElement[]}> = ({ children }) => {
   return (
     <div className="w-screen bg-white text-black py-10 px-10 text-white">
       <div className="flex flex-row justify-between">
@@ -23,3 +24,5 @@ export default function BlogLayout({ children }) {
     </div>
   )
 }
+
+export default BlogLayout

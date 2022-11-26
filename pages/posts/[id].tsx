@@ -12,7 +12,7 @@ import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown
 import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json'
 import { useEffect } from 'react';
 import rangeParser from 'parse-numeric-range'
-import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import oneDark from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 SyntaxHighlighter.registerLanguage('tsx', tsx)
 SyntaxHighlighter.registerLanguage('typescript', typescript)
@@ -23,7 +23,7 @@ SyntaxHighlighter.registerLanguage('json', json)
 
 
 
-export const BlogMarkdown = ({ markdown }) => {
+export const BlogMarkdown = ({ markdown }: any) => {
 
   const syntaxTheme = oneDark
 
@@ -32,7 +32,7 @@ export const BlogMarkdown = ({ markdown }) => {
   })
 
   const MarkdownComponents: object = {
-    code({ node, inline, className, ...props }) {
+    code({ node, inline, className, ...props }: any) {
 
       const match = /language-(\w+)/.exec(className || '')
       const hasMeta = node?.data?.meta
@@ -45,7 +45,7 @@ export const BlogMarkdown = ({ markdown }) => {
             // @ts-ignore
             ? RE?.exec(metadata)[1]
             : '0'
-          const highlightLines = rangeParser(strlineNumbers)
+          const highlightLines = rangeParser(strlineNumbers!)
           const highlight = highlightLines
           // @ts-ignore
           const data: string = highlight.includes(applyHighlights)
@@ -84,8 +84,8 @@ export const BlogMarkdown = ({ markdown }) => {
   )
 }
 
-
-export default function Post({ postData }) {
+// TODO: Type the posts
+export default function Post({ postData }: any) {
   return (
     <BlogLayout>
       <Head>
@@ -113,7 +113,7 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: any) {
   const postData = await getPostData(params.id)
   console.log(postData)
   return {
